@@ -11,6 +11,11 @@ const App = () => {
     // For simplicity, storing in local state in this example
     setUserData(data);
   };
+  useEffect(() => {
+    axios.get('http://localhost:3001/api/data')
+      .then(response => setUserData(response.data.message))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   return (
     <Router>
