@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './views/Home';
 import Dashboard from './views/Dashboard';
+import axios from 'axios';
 
 const App = () => {
   const [userData, setUserData] = useState(null);
